@@ -5,10 +5,12 @@ import App from "./App";
 
 document.addEventListener("DOMContentLoaded", () => {
   const rootEl = document.getElementById("root");
+  const user = rootEl.getAttribute("user");
+
   ReactDom.render(
     <React.StrictMode>
       <BrowserRouter>
-        <App />
+        <App user={user} />
       </BrowserRouter>
     </React.StrictMode>,
     rootEl
