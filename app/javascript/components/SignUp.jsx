@@ -1,6 +1,7 @@
 import { Button, Card, Grid, Stack, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { PRIMARY_COLOR_0, PRIMARY_COLOR_1 } from "./constants";
 import { axiosInstance } from "./utils/axiosInstance";
 
 export default function SignUp(props) {
@@ -56,8 +57,15 @@ export default function SignUp(props) {
           <Grid item xs={12}>
             <Button
               fullWidth
-              onClick={() => {
-                handleSignUp();
+              onClick={handleSignUp}
+              disableRipple
+              sx={{
+                backgroundColor: PRIMARY_COLOR_0,
+                color: "#fff",
+                "&.MuiButtonBase-root:hover": {
+                  backgroundColor: PRIMARY_COLOR_1,
+                  color: "#fff",
+                },
               }}
             >
               SignUp
